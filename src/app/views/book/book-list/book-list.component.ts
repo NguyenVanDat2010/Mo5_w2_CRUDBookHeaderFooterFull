@@ -20,13 +20,15 @@ export class BookListComponent implements OnInit {
   getAllBooks = () => {
     this.bookService.getAllBooks().subscribe(res =>{
       this.bookList = res;
-      console.log(res);
+      this.bookLength = this.bookList.length;
+      // console.log(res);
     })
   }
 
   deleteBookById(id:number){
     if(confirm('Bạn muốn xóa?')) {
       this.bookService.deleteBookById(id).subscribe(res =>{
+        window.alert("Xóa thành công");
         this.getAllBooks();
         // console.log(res);
       })

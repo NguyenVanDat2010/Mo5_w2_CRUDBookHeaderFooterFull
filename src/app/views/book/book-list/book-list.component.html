@@ -1,6 +1,6 @@
 <div>
   <p> có <span>{{bookLength}}</span> cuốn sách</p>
-  <button routerLink="/books/create">Thêm mới sách</button>
+  <button style="margin: 5px;" class="btn btn-square btn-primary btn-sm" routerLink="/books/create">Thêm mới sách</button>
 </div>
 <div>
   <table class="table table-dark">
@@ -9,7 +9,7 @@
       <th>Tên sách</th>
       <th>Tác giả</th>
     </tr>
-    <tr *ngFor="let book of bookList;let i = index" id="noteId{{book.id}}">
+    <tr *ngFor="let book of bookList; let i = index">
       <td>{{i+1}}</td>
       <td><a style="text-decoration: none;" [routerLink] = "['/books/info', book.id]">{{book.title}}</a></td>
       <td>{{book.author}}</td>
